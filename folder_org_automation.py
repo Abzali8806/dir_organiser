@@ -3,15 +3,17 @@ import shutil
 
 from os import walk
 
-counter = 0
+
 path = '/home/abdullah/Downloads'
 destination = '/home/abdullah/resume'
 
-# downloads directory
-d_f = []
-for (dirpath, dirnames, filenames) in walk('/home/abdullah/Downloads'):
-    d_f.extend(filenames)
-    break
+
+d_f = [] # empty list - stands for download files
+for (dirpath, dirnames, filenames) in walk('/home/abdullah/Downloads'): # get's files in downloads directory
+    d_f.extend(filenames) # put's filesnames into d_f list
+    break # breaks after first iteration - hence only filenames in initial Downloads directory are retrieved 
+          # instead of sub-directories.
+
 
 # resume directory
 r_f = []
