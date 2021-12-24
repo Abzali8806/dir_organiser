@@ -1,0 +1,1 @@
+This python script organises my directory system. It take files in my directory system contrasts them with documents in their appropriate destination directory. If a copy of that file already exists in the destination directory the file is deletes, else the file is moved to it's appropriate destination directory.

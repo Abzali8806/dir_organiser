@@ -1,0 +1,1 @@
+This directory is intended to hold bash scripts that will help me locate where files are held in the directory system, using a log.csv file. 
