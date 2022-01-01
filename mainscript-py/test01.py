@@ -7,7 +7,7 @@ from os import walk
 #condition variables
 resumes = "CV"
 Covers = "Cover"
-source = '/home/abz/Downloads'
+source = '/home/abz/Downloads/'
 
 
 
@@ -42,31 +42,31 @@ def des_path(file): # gets destination path of files
         destination = '/home/abz/iso_folder/'
     return destination
 
+
+def move_file(file):
+    destination = des_path
+    global source
+    file_type = ["Cover", "CV", ".iso", ".jpeg", "jpeg", ".png"]
+    for type in file_type:
+        try:
+            if type.lower() not in file:
+                ("file not found")
+            else:
+                shutil.move(source+file, destination)
+                csv_func(file, destination)
+        except FileNotFoundError:
+            print("Error! file not found")
+
+
 loop_count = 0
 for file in d_f:
-    d_path = des_path(file)
-    print(file)
+    # d_path = des_path(file)
+    # print(file)
     if file in r_f:
         os.remove(source+file)
-    elif "CV".lower() in file.lower():
-        shutil.move(source+file, d_path)
-        csv_func(file, d_path)
-    elif "Cover".lower() in file.lower():
-        shutil.move(source+file, d_path)
-        csv_func(file, d_path)
     elif file in iso_f:
-        os.remove(source+file, d_path)
+        os.remove(source+file)
         print('file deleted')
-    elif '.iso' in file:
-        shutil.move(source+file, d_path)
-        csv_func(file, d_path)
-    elif '.jpg'.lower() in file.lower():
-        shutil.move(source+file, d_path)
-        csv_func(file, d_path)
-    elif '.jpeg'.lower() in file.lower():
-        shutil.move(source+file, d_path)
-        csv_func(file, d_path)
-    elif '.png'.lower() in file.lower():
-        shutil.move(source+file, d_path)
-        csv_func(file, d_path)
+    else:
+        move_file(file)
         loop_count+=1
