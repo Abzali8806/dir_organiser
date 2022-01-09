@@ -1,1 +1,1 @@
-This directory houses both python and bash scripts that are designed to organise my directory system by comparing, moving and deleting files starting at the downloads directory.
+The program in the mainscript folder moves files from my the downloads directory to their appropriate directory, and the program in the where-command directory will tell you where those files can be found in the directory system when you enter the keyword alias "where" into the terminal followed by the file name.
